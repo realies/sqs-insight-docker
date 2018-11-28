@@ -1,0 +1,12 @@
+{
+    "port": 3000,
+    "rememberMessages": 100,
+    "endpoints": [
+        {
+            "key": "notValidKey",
+            "secretKey": "notValidSecret",
+            "region": "eu-central-1",
+            "url": "http://sqs.amazonaws.com/my-user/my-queue"
+        }
+    ]
+}

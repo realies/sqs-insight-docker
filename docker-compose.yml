@@ -1,0 +1,18 @@
+version: '3'
+services:
+  sqs-insight:
+    image: realies/sqs-insight
+    environment:
+      - mode=endpoint
+      - url=http://elasticmq:9324/queue/default
+    command: ["/wait-for", "elasticmq:9324", "-t", "30", "--", "/init.sh"]
+    ports:
+      - 3000:3000
+    links:
+      - elasticmq
+  elasticmq:
+    image: softwaremill/elasticmq
+    volumes:
+      - ./conf/elasticmq.conf:/opt/elasticmq.conf
+    ports:
+      - 9324:9324
