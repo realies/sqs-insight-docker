@@ -4,7 +4,7 @@ run apk update && apk upgrade && \
  apk add jq && \
  wget https://raw.githubusercontent.com/eficode/wait-for/master/wait-for -O /wait-for && \
  chmod +x /wait-for && \
- git clone https://github.com/realies/sqs-insight.git && \
+ git clone https://github.com/kobim/sqs-insight.git && \
  cd /sqs-insight && \
  yarn install && \
  apk del build-dependencies && \
