@@ -6,8 +6,9 @@ docker run -d --name sqs-insight \
 -e mode=endpoint \
 -e key=notValidKey \
 -e secretKey=notValidSecret \
--e region=eu-central-1 \
+-e region=us-east-1 \
 -e url=http://sqs.amazonaws.com/my-user/my-queue \
+-e visibility=0 \
 -p 3000:3000 \
 realies/sqs-insight
 ```
@@ -19,6 +20,7 @@ docker run -d --name sqs-insight \
 -e secretKey=notValidSecret \
 -e region=us-east-1 \
 -e url=http://sqs.amazonaws.com/ \
+-e visibility=0 \
 -p 3000:3000 \
 realies/sqs-insight
 ```
