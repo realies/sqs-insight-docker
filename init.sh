@@ -7,5 +7,6 @@ if [ ! -f config/config_local.json ]; then
  [ ! -z "$secretKey" ] && jq ".[keys_unsorted | last][0].secretKey = \"$secretKey\"" config/config_local.json > config/config_local.json.tmp && mv config/config_local.json.tmp config/config_local.json
  [ ! -z "$region" ] && jq ".[keys_unsorted | last][0].region = \"$region\"" config/config_local.json > config/config_local.json.tmp && mv config/config_local.json.tmp config/config_local.json
  [ ! -z "$url" ] && jq ".[keys_unsorted | last][0].url = \"$url\"" config/config_local.json > config/config_local.json.tmp && mv config/config_local.json.tmp config/config_local.json
+ [ ! -z "$visibility" ] && jq ".[keys_unsorted | last][0].visibility = \"$visibility\"" config/config_local.json > config/config_local.json.tmp && mv config/config_local.json.tmp config/config_local.json
 fi
 yarn start
