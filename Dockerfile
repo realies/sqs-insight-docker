@@ -1,11 +1,11 @@
 from node:alpine
+env commit a32e126
 run apk update && apk upgrade && \
  apk add --virtual build-dependencies git && \
  apk add jq && \
- wget https://raw.githubusercontent.com/eficode/wait-for/master/wait-for -O /wait-for && \
- chmod +x /wait-for && \
- git clone https://github.com/kobim/sqs-insight.git && \
+ git clone -n https://github.com/kobim/sqs-insight.git && \
  cd /sqs-insight && \
+ git checkout ${commit} && \
  yarn install && \
  apk del build-dependencies && \
  rm -rf /var/cache/apk/*
