@@ -33,5 +33,7 @@ realies/sqs-insight
 ```
 ##### Using Docker Compose
 ```
-docker-compose up -d
+curl -fL# https://raw.githubusercontent.com/eficode/wait-for/master/wait-for -O
+chmod +x wait-for
+docker-compose up
 ```

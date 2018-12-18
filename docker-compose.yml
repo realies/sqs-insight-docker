@@ -6,9 +6,11 @@ services:
       - mode=endpoint
       - url=http://elasticmq:9324/queue/default
     command: ["/wait-for", "elasticmq:9324", "-t", "30", "--", "/init.sh"]
+    volumes:
+      - ./wait-for:/wait-for
     ports:
       - 3000:3000
-    links:
+    depends_on:
       - elasticmq
   elasticmq:
     image: softwaremill/elasticmq
