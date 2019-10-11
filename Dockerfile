@@ -1,5 +1,5 @@
 from node:alpine
-env commit a32e126
+env commit d6f264b
 run apk update && apk upgrade && \
  apk add --virtual build-dependencies git && \
  apk add jq && \
